@@ -1,0 +1,24 @@
+.wrapper
+  %h1= "#{@nation} team"
+  %hr
+  %h4 Goalkeepers:
+  - @team_players.goalkeepers.each do |goalkeeper|
+    %p= render 'player', player: goalkeeper
+
+  - @team_players.divisions.each_with_index do |division, i|
+    %h3= "Division ##{i+1}"
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %td
+            = render 'player', player: division[:LW]
+          %td
+            = render 'player', player: division[:C]
+          %td
+            = render 'player', player: division[:RW]
+        %tr
+          %td
+            = render 'player', player: division[:LD]
+          %td
+          %td
+            = render 'player', player: division[:RD]

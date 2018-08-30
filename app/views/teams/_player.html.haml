@@ -1,0 +1,7 @@
+- if player.is_a? Player
+  = link_to player.name, player.link
+  %br
+  Team:
+  = player.team
+- else
+  = player

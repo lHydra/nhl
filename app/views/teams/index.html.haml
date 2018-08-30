@@ -1,0 +1,4 @@
+.wrapper
+  = form_tag(nation_teams_path, method: :get) do
+    = select('nation', 'name', @nations, {}, { class: 'custom-select' })
+    = submit_tag('Create best team', class: 'btn btn-success btn-lg')
