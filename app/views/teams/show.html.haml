@@ -2,7 +2,7 @@
   %h1= "#{@nation} team"
   %hr
   %h4 Goalkeepers:
-  - @team_players.goalkeepers.each do |goalkeeper|
+  - @team_players.g_players.each do |goalkeeper|
     %p= render 'player', player: goalkeeper
 
   - @team_players.divisions.each_with_index do |division, i|

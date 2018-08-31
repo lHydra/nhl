@@ -18,31 +18,31 @@ describe 'BestTeam' do
     it 'returns best 4 left forward players for nation team' do
       lw = Player.where(position: 'LW')
 
-      expect(players.left_fwd_players).to eq(lw.order(capacity: :desc).take(4))
+      expect(players.lw_players).to eq(lw.order(capacity: :desc).take(4))
     end
 
     it 'returns best 4 center players for nation team' do
       c = Player.where(position: 'C')
 
-      expect(players.center_players).to eq(c.order(capacity: :desc).take(4))
+      expect(players.c_players).to eq(c.order(capacity: :desc).take(4))
     end
 
     it 'returns best right forward players for nation team' do
       rw = Player.where(position: 'RW')
 
-      expect(players.right_fwd_players).to eq(rw.order(capacity: :desc).take(4))
+      expect(players.rw_players).to eq(rw.order(capacity: :desc).take(4))
     end
 
     it 'returns best left defense players for nation team' do
       ld = Player.where(position: 'LD')
 
-      expect(players.left_def_players).to eq(ld.order(capacity: :desc).take(4))
+      expect(players.ld_players).to eq(ld.order(capacity: :desc).take(4))
     end
 
       it 'returns best left forward players for nation team' do
       rd = Player.where(position: 'RD')
 
-      expect(players.right_def_players).to eq(rd.order(capacity: :desc).take(4))
+      expect(players.rd_players).to eq(rd.order(capacity: :desc).take(4))
     end
   end
 
@@ -58,7 +58,7 @@ describe 'BestTeam' do
     end
 
     it 'has a dash if no one player on position' do
-      expect(players.left_def_players.last).to eq('-')
+      expect(players.ld_players.last).to eq('-')
     end
 
     it 'has a player from another position with a higher capacity' do
@@ -66,8 +66,8 @@ describe 'BestTeam' do
       rw = Player.where(position: 'RW').order(capacity: :desc).last
 
       c = rw.capacity > lw.capacity ? rw : lw
-      expect(players.center_players.last.position).to eq(c.position)
-      expect(players.center_players.last) == c
+      expect(players.c_players.last.position).to eq(c.position)
+      expect(players.c_players.last) == c
     end
   end
 end
