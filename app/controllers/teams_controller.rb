@@ -7,6 +7,5 @@ class TeamsController < ApplicationController
     @nation = params[:nation][:name]
 
     @team_players = BestTeam.new(nation: @nation)
-    @team_players.create_best_team
   end
 end

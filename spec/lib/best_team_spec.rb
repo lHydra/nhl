@@ -11,8 +11,6 @@ describe 'BestTeam' do
       create_list(:player, 8, position: 'RW', capacity: rand(1..3000000))
       create_list(:player, 7, position: 'LD', capacity: rand(1..3000000))
       create_list(:player, 6, position: 'RD', capacity: rand(1..3000000))
-
-      players.create_best_team
     end
 
     it 'returns best 4 left forward players for nation team' do
@@ -53,8 +51,6 @@ describe 'BestTeam' do
       create_list(:player, 5, position: 'RW', capacity: rand(1..3000000))
       create_list(:player, 3, position: 'LD', capacity: rand(1..3000000))
       create_list(:player, 4, position: 'RD', capacity: rand(1..3000000))
-
-      players.create_best_team
     end
 
     it 'has a dash if no one player on position' do

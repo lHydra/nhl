@@ -22,13 +22,18 @@ class BestTeam
       rd: ['LD'],
       g: []
     }
+
+    perfom
   end
 
-  def create_best_team
+  def perfom
     find_players
+    create_divisions
+  end
 
-    # create divisions array
+  private
 
+  def create_divisions
     N.times do |i|
       @divisions[i] = { LW: @lw_players[i],
                         C: @c_players[i],
@@ -38,8 +43,6 @@ class BestTeam
                       }
     end
   end
-
-  private
 
   def find_players
     @pos_replacement_rules.each do |pos, replacements|
