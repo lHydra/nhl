@@ -2,25 +2,28 @@
 
 ## Steps to start this application:
 
-**Database creation and filling**
-
-Download project
+**Download project**
 
 ```
 git@github.com:lHydra/nhl.git
 ```
 
-Start bundle install
+**Start bundle install**
 
 ```
 bundle install
 ```
 
-Start rake tasks.
+**Create Database**
 
 ```
 rake db:create
 rake db:migrate
+```
+
+**Start rake task to parse nhlnumbers**
+
+```
 rake parse:nhlnumbers
 ```
 
@@ -29,7 +32,6 @@ If your provider deny access to nhlnumbers, then put proxy to rake task
 ```
 rake 'parse:nhlnumbers[http://ip:port]'
 ```
-
 
 **Start the application**
 
