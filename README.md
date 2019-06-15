@@ -1,5 +1,9 @@
 # NHL
 
+## Description
+
+Тестовое задание.
+
 ## Steps to start this application:
 
 **Download project**
