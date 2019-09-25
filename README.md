@@ -2,7 +2,7 @@
 
 ## Description
 
-Тестовое задание.
+Test assignment.
 
 ## Steps to start this application:
 
